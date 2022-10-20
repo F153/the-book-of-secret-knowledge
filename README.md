@@ -114,9 +114,8 @@ Only main chapters:
 - **[Hacking/Penetration Testing](#hackingpenetration-testing-toc)**
 - **[Your daily knowledge and news](#your-daily-knowledge-and-news-toc)**
 - **[Other Cheat Sheets](#other-cheat-sheets-toc)**
-- **[Shell One-liners](#shell-one-liners-toc)**
-- **[Shell Tricks](#shell-tricks-toc)**
-- **[Shell Functions](#shell-functions-toc)**
+- **[One-liners](#one-liners-toc)**
+- **[Shell functions](#shell-functions-toc)**
 
 ## :trident: &nbsp;The Book of Secret Knowledge (Chapters)
 
@@ -1670,7 +1669,7 @@ _Encoding_
 text :arrow_right: encoded<br>
 text :arrow_left: encoded
 
-#### Shell One-liners &nbsp;[<sup>[TOC]</sup>](#anger-table-of-contents)
+#### One-liners &nbsp;[<sup>[TOC]</sup>](#anger-table-of-contents)
 
 ##### Table of Contents
 
@@ -2328,7 +2327,6 @@ ___
 ```bash
 vimdiff file1 file2
 ```
-
 ###### Compare two JSON files
 
 ```bash
@@ -2336,9 +2334,8 @@ vimdiff <(jq -S . A.json) <(jq -S . B.json)
 ```
 
 ###### Compare Hex dump
-
 ```bash
-d(){ vimdiff <(f $1) <(f $2);};f(){ hexdump -C $1 | cut -d' ' -f3- | tr -s ' ';}; d ~/bin1 ~/bin2
+d(){ vimdiff <(f $1) <(f $2);};f(){ hexdump -C $1|cut -d' ' -f3-|tr -s ' ';}; d ~/bin1 ~/bin2
 ```
 
 ###### diffchar
@@ -4354,17 +4351,6 @@ perl -p -i -e 's/\t/  /g' filename
 ```bash
 perl -lne '$i++; $in += length($_); END { print "$i lines, $in characters"; }' filename
 ```
-
-#### Shell Tricks &nbsp;[<sup>[TOC]</sup>](#anger-table-of-contents)
-
-When you get a shell, it is generally not very clean, but after following these steps, you will have a fairly clean and comfortable shell to work with.
-
-1) `script /dev/null -c bash`
-2) Ctrl-Z (to send it to background)
-3) `stty raw -echo; fg` (returns the shell to foreground)
-4) `reset` (to reset terminal)
-5) `xterm` (when asked for terminal type)
-6) `export TERM=xterm; export SHELL=bash`
 
 #### Shell functions &nbsp;[<sup>[TOC]</sup>](#anger-table-of-contents)
 
